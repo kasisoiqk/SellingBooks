@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/style_home.css">
+    <link rel="stylesheet" href="./assets/css/responsive_home.css">
 </head>
 
 <body>
     <div class="app">
         <header class="app__header">
-            <div class="app-header__navbar">
+            <div class="app-header__navbar hide-on-lower-tablet">
                 <div class="grid wide">
                     <div class="app-header__navbar-wapper">
                         <div class="app-header-navbar__left">
@@ -57,10 +58,32 @@
                     </div>
                 </div>
             </div>
+            <div class="app-header__mobile hide-on-lower-pc">
+                <div class="grid wide">
+                    <div class="app-header__mobile-wrapper">
+                        <div class="app-header-mobile__left">
+                            <div class="app-header-mobile-left__menu">
+                                <span class="material-icons-outlined">subject</span>
+                            </div>
+                            <a href="#" class="app-header-mobile-left__logo">
+                                <img src="./assets/images/logo-new.png" alt="logo-new">
+                            </a>
+                        </div>
+                        <div class="app-header-mobile__right">
+                            <div class="app-header-main-cart__hotline">
+                                <span class="material-icons-outlined">headset_mic</span>
+                                <div class="app-header-main-cart__hotline-sub">
+                                    <h2>0933 109 009</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="app-header__main">
                 <div class="grid wide">
                     <div class="app-header__main-wrapper">
-                        <a href="#" class="app-header-main__logo">
+                        <a href="#" class="app-header-main__logo hide-on-lower-tablet">
                             <img src="./assets/images/logo-new.png" alt="logo-new">
                         </a>
                         <form method="POST" class="app-header-main__search">
@@ -85,11 +108,11 @@
                             </div>
                             <div class="app-header-main-search__btn">
                                 <span class="material-icons-outlined">search</span>
-                                <p>Tìm kiếm</p>
+                                <p class="hide-on-moblie">Tìm kiếm</p>
                             </div>
                         </form>
-                        <div class="app-header-main__cart">
-                            <div class="app-header-main-cart__hotline">
+                        <div class="app-header-main__cart hide-on-moblie">
+                            <div class="app-header-main-cart__hotline hide-on-lower-tablet">
                                 <span class="material-icons-outlined">headset_mic</span>
                                 <div class="app-header-main-cart__hotline-sub">
                                     <h2>0933 109 009</h2>
@@ -117,7 +140,7 @@
             <div class="grid wide">
                 <div class="app-content__banner">
                     <div class="row" style="height: 100%;">
-                        <div class="col l-10">
+                        <div class="col l-10 m-12 c-12">
                             <div class="app-content-banner__slider">
                                 <div class="app-content-banner-slider__img"></div>
                                 <ul class="app-content-banner-slider__control">
@@ -128,9 +151,10 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col l-2">
+                        <div class="col l-2 m-0 c-0">
                             <div class="app-content-banner__featured-books">
-                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="featured-books">
+                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                    alt="featured-books">
                                 <div class="app-content-banner__layer"></div>
                             </div>
                         </div>
@@ -140,8 +164,9 @@
             <div class="app-content__books">
                 <div class="grid wide">
                     <div class="row">
-                        <div class="col l-2">
-                            <div class="app-content-books__title"><span class="material-icons-outlined">view_list</span>Danh mục sách</div>
+                        <div class="col l-2 m-4 c-12">
+                            <div class="app-content-books__title"><span
+                                    class="material-icons-outlined">view_list</span>Danh mục sách</div>
                             <ul class="app-content-books__cate">
                                 <li class="app-content-books-cate__item"><a href="#">Truyện tranh</a></li>
                                 <li class="app-content-books-cate__item"><a href="#">Artbook & sách tranh</a></li>
@@ -156,260 +181,308 @@
                                 <li class="app-content-books-cate__item"><a href="#">Từ điển</a></li>
                             </ul>
                         </div>
-                        <div class="col l-10">
+                        <div class="col l-10 m-8 c-12">
                             <div class="app-content-books__text">Sách mới</div>
                             <div class="app-content-books__list">
                                 <div class="row">
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png" alt="">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="col l-2-4">
+                                    <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
                                             <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
                                                 <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
                                                 <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000</div>
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
                                                     <div class="app-content-books-item-info__price-sell">15</div>
                                                 </div>
@@ -434,7 +507,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </body>
