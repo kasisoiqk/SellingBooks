@@ -51,6 +51,60 @@
     font-size: 1.2rem;
 }
 
+/* Header Mobile */
+.app-header__mobile {
+    background-color: var(--background-header-color);
+}
+
+.app-header__mobile-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-top: 12px;
+    color: var(--primary-color);
+}
+
+.app-header-mobile__left {
+    display: flex;
+    align-items: center;
+    gap: 0 24px;
+    height: 100%;
+}
+
+.app-header-mobile-left__menu {
+    width: 100%;
+    height: 100%;
+}
+
+.app-header-mobile-left__menu > span {
+    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8px;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+.app-header-mobile-left__menu > span:hover {
+    opacity: 0.9;
+}
+
+.app-header-mobile-left__logo {
+    height: 100%;
+}
+
+.app-header-mobile-left__logo > img {
+    height: 100%;
+}
+
+.app-header-mobile__right {
+
+}
+
+
 /* Header Main */
 .app-header__main {
     background-color: var(--background-content-color);
@@ -322,7 +376,7 @@
 .app-content-banner-slider__control > li {
     width: 10px;
     height: 10px;
-    border: 2px solid var(--text-color-light);
+    border: 2px solid var(--black-color);
     background-color: var(--white-color);
     animation: ControlShow 16s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
 }
@@ -591,6 +645,7 @@
     display: block;
     line-height: 2.8rem;
     margin: 0 10px;
+    white-space: nowrap;
 }
 
 .current-page,
