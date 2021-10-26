@@ -859,6 +859,7 @@
 }
 
 .app-content__pagination a {
+    color: var(--text-color-light);
     text-decoration: none;
     display: block;
     line-height: 2.8rem;
@@ -871,7 +872,7 @@
 .app-content-pagination__last-page {
     position: relative;
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--white-color) !important;
     border-radius: 2px;
     padding: 0 4px;
 }
