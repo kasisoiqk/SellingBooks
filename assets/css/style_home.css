@@ -1,5 +1,6 @@
 .app {
     font-size: 1.4rem;
+    overflow: hidden;
 }
 
 /* Header */
@@ -177,7 +178,7 @@
 
 /* Header Main */
 .app-header__main {
-    background: linear-gradient(to top right, #f0e8e1, #f1b379);
+    background: linear-gradient(to top right, var(--white-color), #f1b379);
 }
 
 .app-header__main-wrapper {
@@ -207,7 +208,7 @@
 }
 
 .app-header-main-search__filter {
-    width: 80px;
+    padding: 0 8px;
     height: 100%;
     text-align: center;
     display: flex;
@@ -342,17 +343,20 @@
     display: flex;
     align-items: center;
     position: relative;
+    width: 124px;
 }
 
 .app-header-main-cart__cart > span {
     font-size: 2.8rem;
-    padding-right: 10px;
+    padding-right: 2px;
 }
 
 .app-header-main-cart__cart > a {
     font-size: 1.2rem;
     color: currentColor;
     text-decoration: none;
+    text-align: right;
+    width: 100%;
 }
 
 .app-header-main-cart__cart > a:hover {
@@ -751,7 +755,7 @@
 .app-content-books__text {
     background-color: var(--white-color);
     padding-left: 14px;
-    line-height: 2.8rem;
+    line-height: 3.8rem;
     font-weight: 600;
     border-radius: 2px;
 }
@@ -762,7 +766,7 @@
     background-color: var(--white-color);
     border-radius: 2px;
     overflow: hidden;
-    box-shadow: 1px 1px 2px var(--background-content-color);
+    box-shadow: 1px 2px 2px var(--background-content-color);
     display: block;
     color: currentColor;
     text-decoration: none;
@@ -771,8 +775,14 @@
     will-change: transform;
 }
 
-.app-content-books__item:hover {
+.app-content-books__container:hover > 
+.app-content-books__item {
     transform: translateY(-2px);
+}
+
+.app-content-books__container:hover >
+.app-content-books__pop-up {
+    display: block;
 }
 
 .app-content-books-item__img {
@@ -819,18 +829,14 @@
     font-weight: 600;
 }
 
-.app-content-books-item-info__price-old::after,
-.app-content-books-item-info__price-current::after {
-    content: 'đ';
-}
-
 .app-content-books-item-info__price-old {
     font-size: 1rem;
     color: var(--text-color-light);
     text-decoration: line-through;
 }
 
-.app-content-books-item-info__price-sell {
+.app-content-books-pop-up__sale,
+.app-content-books-item-info__price-sale {
     background-color: var(--red-color);
     color: var(--white-color);
     font-size: 1.2rem;
@@ -839,13 +845,92 @@
     border-right: 1px dashed var(--white-color);
 }
 
-.app-content-books-item-info__price-sell::before {
-    content: '-';
+.app-content-books__pop-up {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translateY(-50%);
+    background-color: var(--white-color);
+    padding: 10px 14px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 2px var(--background-header-color);
+    width: 200px;
+    animation: FadeIn .4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    display: none;
 }
 
-.app-content-books-item-info__price-sell::after {
-    content: '%';
+.app-content-books__pop-up::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -34px;
+    transform: translateY(-50%);
+    border-width: 10px 20px;
+    border-style: solid;
+    border-color: transparent var(--white-color) transparent transparent;
 }
+
+.app-content-books-pop-up__name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.8rem;
+}
+
+.app-content-books-pop-up__author {
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.app-content-books-pop-up__price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.app-content-books-pop-up__price-current {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.app-content-books-pop-up__price-old {
+    color: var(--text-color-light);
+    font-size: 1rem;
+    margin-left: 12px;
+    text-decoration: line-through;
+}
+
+.app-content-books-pop-up__sale {
+    display: inline-block;
+}
+
+.app-content-books-pop-up__btn {
+    height: 42px;
+}
+
+.app-content-books-pop-up__btn a,
+.app-content-books-pop-up__btn span {
+    background-color: #11b4b4;
+    color: var(--white-color);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 12px 0;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.app-content-books-pop-up__btn a:hover,
+.app-content-books-pop-up__btn span:hover {
+    opacity: 0.9;
+}
+
 
 /* Content Pagination */
 .app-content__pagination {

@@ -11,6 +11,7 @@
         integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/icon?family=Poppins:display=swap|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/style_home.css">
@@ -65,9 +66,11 @@
                         <div class="app-header-mobile__left">
                             <div class="app-header-mobile-left__menu">
                                 <input type="checkbox" id="cbo-mobile-menu" hidden>
-                                <label for="cbo-mobile-menu" class="app-header-mobile-left__menu-icon material-icons-outlined">subject</label>
+                                <label for="cbo-mobile-menu"
+                                    class="app-header-mobile-left__menu-icon material-icons-outlined">subject</label>
                                 <label for="cbo-mobile-menu" class="app-header-mobile-left-menu__list-modal"></label>
-                                <label for="cbo-mobile-menu" class="app-header-mobile-left-menu__close material-icons-outlined">close</label>
+                                <label for="cbo-mobile-menu"
+                                    class="app-header-mobile-left-menu__close material-icons-outlined">close</label>
                                 <label for="none" class="app-header-mobile-left-menu__list">
                                     <ul>
                                         <li class="app-header-mobile-left-menu__item">
@@ -162,6 +165,7 @@
                                 </ul>
                             </div>
                             <div class="app-header-main-search__input">
+                                <input type="hidden" name="id-cate" id="id-cate" value="">
                                 <input type="text" name="txt-search" id="txt-search" placeholder="Bạn cần tìm gì?">
                             </div>
                             <div class="app-header-main-search__btn">
@@ -178,7 +182,7 @@
                                 </div>
                             </div>
                             <!-- No cart: header-main--no-cart -->
-                            <div class="app-header-main-cart__cart">
+                            <div id="cart-list" class="app-header-main-cart__cart">
                                 <span class="material-icons-outlined">shopping_cart</span>
                                 <a href="#" class="number-books-cart">2</a>
                                 <div class="app-header-main-cart__list">
@@ -190,7 +194,8 @@
                                     <ul>
                                         <li class="app-header-main-cart-list__item">
                                             <div class="app-header-main-cart-list-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-header-main-cart-list-item__info">
                                                 <div>Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
@@ -204,7 +209,8 @@
                                         </li>
                                         <li class="app-header-main-cart-list__item">
                                             <div class="app-header-main-cart-list-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
                                             </div>
                                             <div class="app-header-main-cart-list-item__info">
                                                 <div>Sài Gòn Những Mảnh Ghép Rời Ký Ức</div>
@@ -284,24 +290,44 @@
                             <div class="app-content-books__text">Sách mới</div>
                             <div class="app-content-books__list">
                                 <div class="row">
-                                    <div class="col l-2-4 m-6 c-12">
-                                        <a href="#" class="app-content-books__item">
-                                            <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
-                                                    Ghép Rời Ký Ức</div>
-                                                <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
-                                                <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000
+                                    <div class="col l-2-4 m-6 c-12" style="position: relative;">
+                                        <div class="app-content-books__container">
+                                            <a href="#" class="app-content-books__item">
+                                                <div class="app-content-books-item__img">
+                                                    <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                        alt="">
+                                                </div>
+                                                <div class="app-content-books-item__info">
+                                                    <div class="app-content-books-item-info__name">Sài Gòn Những
+                                                        Mảnh
+                                                        Ghép Rời Ký Ức</div>
+                                                    <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
+                                                    <div class="app-content-books-item-info__price">
+                                                        <div class="app-content-books-item-info__price-current">106,000đ
+                                                        </div>
+                                                        <div class="app-content-books-item-info__price-old">125,000đ
+                                                        </div>
+                                                        <div class="app-content-books-item-info__price-sale">-15%</div>
                                                     </div>
-                                                    <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                </div>
+                                            </a>
+                                            <div class="app-content-books__pop-up">
+                                                <div class="app-content-books-pop-up__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-pop-up__author">Lê Văn Nghĩa</div>
+                                                <div class="app-content-books-pop-up__price">
+                                                    <div class="app-content-books-pop-up__price-current">106,000đ</div>
+                                                    <div class="app-content-books-pop-up__price-old">125,000đ</div>
+                                                </div>
+                                                <div class="app-content-books-pop-up__sale">Giảm giá: 16%</div>
+                                                <div class="app-content-books-pop-up__btn">
+                                                    <span>Thêm vào giỏ hàng</span>
+                                                </div>
+                                                <div class="app-content-books-pop-up__btn">
+                                                    <a href="#">Xem chi tiết</a>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
                                     <div class="col l-2-4 m-6 c-12">
                                         <a href="#" class="app-content-books__item">
@@ -317,45 +343,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col l-2-4 m-6 c-12">
-                                        <a href="#" class="app-content-books__item">
-                                            <div class="app-content-books-item__img">
-                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
-                                                    Ghép Rời Ký Ức</div>
-                                                <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
-                                                <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000
-                                                    </div>
-                                                    <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col l-2-4 m-6 c-12">
-                                        <a href="#" class="app-content-books__item">
-                                            <div class="app-content-books-item__img">
-                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-content-books-item__info">
-                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
-                                                    Ghép Rời Ký Ức</div>
-                                                <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
-                                                <div class="app-content-books-item-info__price">
-                                                    <div class="app-content-books-item-info__price-current">106,000
-                                                    </div>
-                                                    <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -374,7 +362,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -393,7 +381,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -412,7 +400,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -431,7 +419,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -450,7 +438,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -469,7 +457,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -488,7 +476,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -507,7 +495,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -526,7 +514,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -545,7 +533,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -564,7 +552,7 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -583,7 +571,45 @@
                                                     <div class="app-content-books-item-info__price-current">106,000
                                                     </div>
                                                     <div class="app-content-books-item-info__price-old">125,000</div>
-                                                    <div class="app-content-books-item-info__price-sell">15</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-6 c-12">
+                                        <a href="#" class="app-content-books__item">
+                                            <div class="app-content-books-item__img">
+                                                <img src="./assets/images/sai-gon-nhung-manh-ghep-roi-ky-uc_116334_1.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="app-content-books-item__info">
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
+                                                <div class="app-content-books-item-info__price">
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
+                                                    <div class="app-content-books-item-info__price-old">125,000</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-6 c-12">
+                                        <a href="#" class="app-content-books__item">
+                                            <div class="app-content-books-item__img">
+                                                <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png"
+                                                    alt="">
+                                            </div>
+                                            <div class="app-content-books-item__info">
+                                                <div class="app-content-books-item-info__name">Sài Gòn Những Mảnh
+                                                    Ghép Rời Ký Ức</div>
+                                                <div class="app-content-books-item-info__author">Lê Văn Nghĩa</div>
+                                                <div class="app-content-books-item-info__price">
+                                                    <div class="app-content-books-item-info__price-current">106,000
+                                                    </div>
+                                                    <div class="app-content-books-item-info__price-old">125,000</div>
+                                                    <div class="app-content-books-item-info__price-sale">15</div>
                                                 </div>
                                             </div>
                                         </a>
@@ -592,15 +618,16 @@
                             </div>
                             <div class="app-content__pagination">
                                 <a href="#" class="app-content-pagination__first-page">Về trang đầu</a>
-                                <a href="#" class="app-content-pagination__before-page"><</a>
-                                <a href="#" class="app-content-pagination__item-page current-page">1</a>
-                                <a href="#" class="app-content-pagination__item-page">2</a>
-                                <a href="#" class="app-content-pagination__item-page">3</a>
-                                <a href="#" class="app-content-pagination__item-page">4</a>
-                                <a href="#" class="app-content-pagination__item-page">...</a>
-                                <a href="#" class="app-content-pagination__item-page">9</a>
-                                <a href="#" class="app-content-pagination__affter-page">></a>
-                                <a href="#" class="app-content-pagination__last-page">Về trang cuối</a>
+                                <a href="#" class="app-content-pagination__before-page">
+                                    << /a>
+                                        <a href="#" class="app-content-pagination__item-page current-page">1</a>
+                                        <a href="#" class="app-content-pagination__item-page">2</a>
+                                        <a href="#" class="app-content-pagination__item-page">3</a>
+                                        <a href="#" class="app-content-pagination__item-page">4</a>
+                                        <a href="#" class="app-content-pagination__item-page">...</a>
+                                        <a href="#" class="app-content-pagination__item-page">9</a>
+                                        <a href="#" class="app-content-pagination__affter-page">></a>
+                                        <a href="#" class="app-content-pagination__last-page">Về trang cuối</a>
                             </div>
                         </div>
                     </div>
@@ -615,28 +642,43 @@
                     <li><a href="#">Top 3 Website TMĐT ngành Sách tiêu biểu </a></li>
                 </ul>
             </div>
-    
+
             <div class="categories">
                 <ul>
                     <li>
                         <b>NHÀ SÁCH TRỰC TUYẾN BOOKBUY.VN </b>
                         <ul>
-                            <li style="font-family: Arial,Helvetica,sans-serif; line-height: 18px; font-size:12px;text-align:justify">
-    
+                            <li
+                                style="font-family: Arial,Helvetica,sans-serif; line-height: 18px; font-size:12px;text-align:justify">
+
                                 <p style="padding:inherit">
-                                    <a href="#" style="padding: 0;  border: 0;"><b>Mua sách online</b></a> tại nhà sách trực tuyến Bookbuy.vn để được cập nhật nhanh nhất các tựa sách đủ thể loại với mức giảm 15 – 35% cùng nhiều ưu đãi, quà tặng kèm. Qua nhiều năm, không chỉ là địa chỉ tin cậy để bạn <b>mua sách trực tuyến</b>, Bookbuy còn có quà tặng, văn phòng phẩm, vật dụng gia đình,…với chất lượng đảm bảo, chủng loại đa dạng, chế độ bảo hành đầy đủ và giá cả hợp lý từ hàng trăm thương hiệu uy tín trong và ngoài nước. Đặc biệt, bạn có thể chọn những mẫu <a href="#" style="color: blue; border-right: none; padding: 0px 0px; ">sổ tay handmade</a> hay nhiều món <a href="#" style="color:blue;border-right:none;padding:0px 0px;">quà tặng sinh nhật</a> độc đáo chỉ có tại Bookbuy.vn.
+                                    <a href="#" style="padding: 0;  border: 0;"><b>Mua sách online</b></a> tại nhà sách
+                                    trực tuyến Bookbuy.vn để được cập nhật nhanh nhất các tựa sách đủ thể loại với mức
+                                    giảm 15 – 35% cùng nhiều ưu đãi, quà tặng kèm. Qua nhiều năm, không chỉ là địa chỉ
+                                    tin cậy để bạn <b>mua sách trực tuyến</b>, Bookbuy còn có quà tặng, văn phòng phẩm,
+                                    vật dụng gia đình,…với chất lượng đảm bảo, chủng loại đa dạng, chế độ bảo hành đầy
+                                    đủ và giá cả hợp lý từ hàng trăm thương hiệu uy tín trong và ngoài nước. Đặc biệt,
+                                    bạn có thể chọn những mẫu <a href="#"
+                                        style="color: blue; border-right: none; padding: 0px 0px; ">sổ tay handmade</a>
+                                    hay nhiều món <a href="#" style="color:blue;border-right:none;padding:0px 0px;">quà
+                                        tặng sinh nhật</a> độc đáo chỉ có tại Bookbuy.vn.
                                 </p>
                                 <p style="padding:inherit">
-                                    <b>Mua sách online</b> tại Bookbuy, bạn được tận hưởng chính sách hỗ trợ miễn phí đổi trả hàng, giao hàng nhanh – tận nơi – miễn phí*, thanh toán linh hoạt - an toàn, đặc biệt giảm thêm trên giá bán khi sử dụng BBxu giúp bạn <b>mua sách online</b> giá 0đ!
+                                    <b>Mua sách online</b> tại Bookbuy, bạn được tận hưởng chính sách hỗ trợ miễn phí
+                                    đổi trả hàng, giao hàng nhanh – tận nơi – miễn phí*, thanh toán linh hoạt - an toàn,
+                                    đặc biệt giảm thêm trên giá bán khi sử dụng BBxu giúp bạn <b>mua sách online</b> giá
+                                    0đ!
                                 </p>
                                 <p style="padding:inherit">
-                                    Chỉ với 3 cú click chuột, chưa bao giờ trải nghiệm <b>mua sách online</b> lại dễ chịu và nhẹ nhàng như vậy. Còn chần chờ gì nữa, đặt mua ngay những tựa 
-                                    <a href="#" style="color: blue; border-right: none; padding: 0px 0px; ">sách hay</a> cùng hàng ngàn sản phẩm chất lượng khác tại Bookbuy.vn!
+                                    Chỉ với 3 cú click chuột, chưa bao giờ trải nghiệm <b>mua sách online</b> lại dễ
+                                    chịu và nhẹ nhàng như vậy. Còn chần chờ gì nữa, đặt mua ngay những tựa
+                                    <a href="#" style="color: blue; border-right: none; padding: 0px 0px; ">sách hay</a>
+                                    cùng hàng ngàn sản phẩm chất lượng khác tại Bookbuy.vn!
                                 </p>
                             </li>
                         </ul>
                     </li>
-                    
+
                 </ul>
             </div>
             <div class="letter-bottom">
@@ -648,28 +690,35 @@
                             </div>
                             <div class=" canh-cam-letter">
                                 <p class="head-text-letter">Đăng ký nhận bản tin từ Bookbuy</p>
-                             <p class="sub-text-letter">Đừng bỏ lỡ những tin nhắn ưu đãi độc quyền dành riêng cho bạn</p>
+                                <p class="sub-text-letter">Đừng bỏ lỡ những tin nhắn ưu đãi độc quyền dành riêng cho bạn
+                                </p>
                             </div>
                         </div>
-                        
-    
+
+
                         <div class=" canh-cam-form" style="display: inline-block;">
-                            <form action="" id="emailletter-bottom" method="post" >						
+                            <form action="" id="emailletter-bottom" method="post">
                                 <div class="entry-form">
-                                    <input type="text" name="EmailLetter" id="submit-letter" placeholder="Nhập địa chỉ email của bạn">
+                                    <input type="text" name="EmailLetter" id="submit-letter"
+                                        placeholder="Nhập địa chỉ email của bạn">
                                     <ul class="action-submit">
-                                        <li><a href="#" >NAM</a></li>
-                                        <li><a href="#" >NỮ</a></li>
-                                        <li><a href="#" >LGBT</a></li>
+                                        <li><a href="#">NAM</a></li>
+                                        <li><a href="#">NỮ</a></li>
+                                        <li><a href="#">LGBT</a></li>
                                     </ul>
                                 </div>
-                            </form>				
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <div class="toast"></div>
+
+    <script src="./assets/js/toast.js"></script>
+    <script src="./assets/js/main_home.js"></script>
 </body>
 
 </html>
