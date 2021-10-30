@@ -219,21 +219,8 @@ function removeFromCart(id) {
 
 function loadCart() {
     var cartDOM = document.getElementById('cart-list');
-    cartDOM.innerHTML = `
-    <span class="material-icons-outlined">shopping_cart</span>
-    <a href="#" class="number-books-cart">${carts.length}</a>
-    <div class="app-header-main-cart__list">
-        <h2>Sách trong giỏ hàng</h2>
-        <h2 class="header-main-no-cart__text">Giỏ hàng trống</h2>
-        <div class="header-main-no-cart__img">
-            <img src="./assets/images/empty-cart.png" alt="empty-cart">
-        </div>
-        <ul class="app-header-main-cart__list-list"></ul>
-        <div class="app-header-main-cart__view-cart">
-            <a href="#">Đi tới giỏ hàng</a>
-        </div>
-    </div>
-    `;
+
+    document.querySelector('.number-books-cart').innerHTML = carts.length
 
     if(carts.length > 0) {
         if(cartDOM.classList.contains('header-main--no-cart')) {

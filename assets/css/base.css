@@ -159,6 +159,7 @@ html {
 .toast__body {
     flex: 1;
     font-size: 1.4rem;
+    line-height: 1.6rem;
     color: var(--text-color-light);
 }
 

@@ -536,6 +536,7 @@
     text-decoration: none;
     color: var(--text-color-light);
     transition: .2s;
+    margin-left: 10px;
 }
 
 .app-content__linker-wrapper a:hover {
