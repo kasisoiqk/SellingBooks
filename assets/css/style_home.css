@@ -390,6 +390,7 @@
     overflow: auto;
     animation: GrowSimple .4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
     display: none;
+    transition: .3s;
 }
 
 .app-header-main-cart__cart::before {
@@ -929,78 +930,4 @@
 .app-content-books-pop-up__btn a:hover,
 .app-content-books-pop-up__btn span:hover {
     opacity: 0.9;
-}
-
-
-/* Content Pagination */
-.app-content__pagination {
-    margin: 12px 0;
-    background-color: var(--white-color);
-    height: 3.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-}
-
-.app-content__pagination a {
-    color: var(--text-color-light);
-    text-decoration: none;
-    display: block;
-    line-height: 2.8rem;
-    margin: 0 10px;
-    white-space: nowrap;
-}
-
-.current-page,
-.app-content-pagination__first-page,
-.app-content-pagination__last-page {
-    position: relative;
-    background-color: var(--primary-color);
-    color: var(--white-color) !important;
-    border-radius: 2px;
-    padding: 0 4px;
-}
-
-.app-content-pagination__last-page::before,
-.app-content-pagination__first-page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    border-width: 1.4rem;
-    border-style: solid;
-}
-
-.app-content-pagination__first-page::before {
-    left: -2.8rem;
-    border-color: transparent var(--primary-color) transparent transparent;
-}
-
-.app-content-pagination__last-page::before {
-    right: -2.8rem;
-    border-color: transparent transparent transparent var(--primary-color);
-}
-
-.app-content-pagination__before-page,
-.app-content-pagination__affter-page,
-.app-content-pagination__item-page {
-    --size: 2.8rem;
-    width: var(--size);
-    height: var(--size);
-    text-align: center;
-    border-radius: 2px;
-    transition: .2s;
-}
-
-.app-content-pagination__before-page:hover,
-.app-content-pagination__affter-page:hover,
-.app-content-pagination__item-page:hover {
-    background-color: var(--background-content-color);
-}
-
-.current-page:hover,
-.app-content-pagination__first-page:hover,
-.app-content-pagination__last-page:hover {
-    opacity: 0.9;
-    background-color: var(--primary-color);
 }

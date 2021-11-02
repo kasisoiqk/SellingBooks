@@ -111,6 +111,75 @@ html {
     bottom: 0;
     right: 0;
     z-index: 9;
+    background-color: rgba(255, 255, 255, .6);
+    display: none;
+}
+
+.modal__dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    background: linear-gradient(to top right, #ffbe7e, var(--primary-color));
+    box-shadow: 1px 2px 2px var(--background-header-color);
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: var(--white-color);
+    padding: 18px 24px;
+    border-radius: 2px;
+    width: 600px;
+    max-width: 90%;
+}
+
+.modal-dialog__title {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+}
+
+.modal-dialog__content {
+    margin-bottom: 24px;
+}
+
+.modal-dialog__btn {
+    display: flex;
+    gap: 0 8px;
+}
+
+.modal-dialog__btn-yes,
+.modal-dialog__btn-no {
+    display: block;
+    flex: 1;
+    background-color: var(--white-color);
+    color: var(--text-color-light);
+    line-height: 4rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.modal-dialog__btn-yes:hover,
+.modal-dialog__btn-no:hover {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+
+/* Button */
+.app__btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    padding: 6px 10px;
+    white-space: nowrap;
+    color: var(--white-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.app__btn:hover {
+    opacity: .9;
 }
 
 /* Toast */
@@ -186,4 +255,77 @@ html {
 
 .toast__element--info {
     color: #2514c0;
+}
+
+/* Content Pagination */
+.app-content__pagination {
+    margin: 12px 0;
+    background-color: var(--white-color);
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.app-content__pagination a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    display: block;
+    line-height: 2.8rem;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+.current-page,
+.app-content-pagination__first-page,
+.app-content-pagination__last-page {
+    position: relative;
+    background-color: var(--primary-color);
+    color: var(--white-color) !important;
+    border-radius: 2px;
+    padding: 0 4px;
+}
+
+.app-content-pagination__last-page::before,
+.app-content-pagination__first-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-width: 1.4rem;
+    border-style: solid;
+}
+
+.app-content-pagination__first-page::before {
+    left: -2.8rem;
+    border-color: transparent var(--primary-color) transparent transparent;
+}
+
+.app-content-pagination__last-page::before {
+    right: -2.8rem;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
+.app-content-pagination__before-page,
+.app-content-pagination__affter-page,
+.app-content-pagination__item-page {
+    --size: 2.8rem;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    border-radius: 2px;
+    transition: .2s;
+}
+
+.app-content-pagination__before-page:hover,
+.app-content-pagination__affter-page:hover,
+.app-content-pagination__item-page:hover {
+    background-color: var(--background-content-color);
+}
+
+.current-page:hover,
+.app-content-pagination__first-page:hover,
+.app-content-pagination__last-page:hover {
+    opacity: 0.9;
+    background-color: var(--primary-color);
 }

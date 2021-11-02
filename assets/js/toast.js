@@ -11,7 +11,7 @@ function showToast({
         // Auto remove time out
         const autoRemoveId = setTimeout(function () {
             toastDOM.removeChild(toast);
-        }, duration + 1000);
+        }, duration + 500);
 
         // Remove toast when click
         toast.onclick = function (e) {
