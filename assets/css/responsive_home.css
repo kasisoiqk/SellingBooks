@@ -36,9 +36,6 @@
     .hide-on-lower-tablet {
         display: none;
     }
-    .app-content__pagination a {
-        margin: 0 1px;
-    }
 }
 
 /* >= Tablet */

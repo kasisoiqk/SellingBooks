@@ -7,6 +7,7 @@
 
 /* Header */
 .app__header {
+    z-index: 9;
     background-color: var(--background-header-color);
     color: var(--text-color-light);
     position: sticky;
@@ -62,6 +63,7 @@
     font-size: 1.4rem;
     padding: 0 12px;
     height: 100%;
+    width: 100%;
     flex: 1;
 }
 
@@ -96,35 +98,6 @@
     border-radius: 2px;
     box-shadow: 1px 2px 2px var(--background-header-color);
     padding: 24px 12px;
-}
-
-/* Content Linker */
-.app-content__linker {
-    
-}
-
-.app-content__linker-wrapper {
-    height: 42px;
-    display: flex;
-    align-items: center;
-}
-
-.app-content__linker-wrapper a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color-light);
-    transition: .2s;
-    margin-left: 10px;
-}
-
-.app-content__linker-wrapper a:hover {
-    color: var(--primary-color);
-}
-
-.app-content__linker-wrapper span {
-    font-size: 1.8rem;
-    padding-right: 4px;
 }
 
 /* Container Menu */
@@ -388,124 +361,30 @@
     border-right: 1px dashed var(--white-color);
 }
 
-/* Modal input */
-.modal__input {
-    width: 90%;
-    max-width: 800px;
-    background-color: var(--primary-color);
-    background: linear-gradient(to top right, #ffb56c, var(--primary-color));
-    color: var(--white-color);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 18px 24px;
-    border-radius: 4px;
-    animation: FadeIn .3s ease;
-}
-
 #cbo-show-modal:checked ~ .modal {
     display: block;
 }
 
-.modal-input__text > h2 {
-    font-size: 1.6rem;
-    line-height: 2rem;
-}
-
-.modal-input__text > p {
-    font-size: 1.2rem;
-    line-height: 2rem;
-}
-
-.modal-input__info {
-    margin-top: 12px;
-}
-
-.modal-input__group {
-    display: flex;
-    align-items: center;
-    background-color: rgba(255, 255, 255, .4);
-    border-radius: 2px;
-    margin-top: 4px;
-    height: 42px;
-    width: 100%;
-}
-
-.modal-input__group > i {
-    width: 42px;
+/* Footer */
+.app__footer {
+    background-color: var(--background-header-color);
     text-align: center;
 }
 
-.modal-input__group > input, select {
-    background-color: transparent;
-    flex: 1;
-    height: 100%;
-    border: none;
-    outline: none;
+.app__footer > p {
+    line-height: 4rem;
+}
+
+.app__footer a {
+    text-decoration: none;
     color: currentColor;
+    transition: .2s ;
 }
 
-.modal-input__group > input::placeholder {
-    color: currentColor;
+.app__footer a:hover {
+    color: var(--primary-color);
 }
 
-.modal-input__group option {
-    background-color: var(--primary-color);
-}
-
-.modal-input__img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 12px;
-    gap: 16px 0;
-}
-
-.modal-input__img > img {
-    width: 120px;
-    border: 1px solid var(--white-color);
-}
-
-.modal-input__img > span {
-    border: 1px solid var(--white-color);
-}
-
-.modal-input__img > p {
-    font-size: 1.2rem;
-}
-
-.modal-input__btn {
-    display: flex;
-    width: 100%;
-    gap: 0 4px;
-}
-
-.modal-input__btn > span {
-    display: block;
-    width: 100%;
-    background-color: var(--white-color);
-    color: var(--text-color);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 600;
-    padding: 14px 0;
-    border-radius: 2px;
-    margin-top: 12px;
-    transition: .3s;
-    cursor: pointer;
-}
-
-.modal-input__btn > span:hover {
-    background-color: rgba(255, 255, 255, .2);
-    color: var(--white-color);
-}
-
-.modal__input-create .hide-on-create {
-    display: none;
-}
-
-.modal__input-edit .hide-on-edit {
-    display: none;
+.app__footer a::before {
+    content: '© ';
 }

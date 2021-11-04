@@ -520,35 +520,6 @@
     background-color: var(--background-content-color);
 }
 
-/* Content Linker */
-.app-content__linker {
-    
-}
-
-.app-content__linker-wrapper {
-    height: 42px;
-    display: flex;
-    align-items: center;
-}
-
-.app-content__linker-wrapper a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-color-light);
-    transition: .2s;
-    margin-left: 10px;
-}
-
-.app-content__linker-wrapper a:hover {
-    color: var(--primary-color);
-}
-
-.app-content__linker-wrapper span {
-    font-size: 1.8rem;
-    padding-right: 4px;
-}
-
 
 /* Content Banner */
 .app-content__banner {

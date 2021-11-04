@@ -1,36 +1,8 @@
 // Declare variable
 var carts = [];
-
-var categories = [
-    {
-        id: 1,
-        name: 'Truyện tranh',
-    },
-    {
-        id: 2,
-        name: 'Kinh tế',
-    },
-    {
-        id: 3,
-        name: 'Xã hội',
-    },
-    {
-        id: 4,
-        name: 'Văn hóa - Chính trị',
-    },
-    {
-        id: 5,
-        name: 'Ngoại ngữ',
-    },
-    {
-        id: 6,
-        name: 'Công nghệ',
-    },
-    {
-        id: 7,
-        name: 'Lập trình',
-    }
-];
+if(localStorage.getItem('carts') != null) {
+    carts = JSON.parse(localStorage.getItem('carts'));
+}
 
 var books = [
     {
@@ -143,31 +115,6 @@ var books = [
     }
 ]
 
-// Set action for search box
-function loadCategory() {
-    var cateDOM = document.querySelector('.app-header-main-search-filter__choose');
-    cateDOM.innerHTML = '<li class="app-header-main-search-filter-choose__item active-color" onclick="categoryChange(-1, 0)">Tất cả</li>';
-
-    categories.forEach(function (value, index) {
-        cateDOM.innerHTML += `<li class="app-header-main-search-filter-choose__item" onclick="categoryChange(${index}, ${value.id})">${value.name}</li>`;
-    });
-}
-
-function categoryChange(index, id) {
-    var cateList = document.querySelectorAll('.app-header-main-search-filter-choose__item').forEach(function (value) {
-        if (value.classList.contains('active-color')) {
-            value.classList.remove('active-color');
-        }
-    });
-    var dom = document.querySelector(`.app-header-main-search-filter-choose__item:nth-child(${index + 2})`);
-    dom.classList.add('active-color');
-
-    var textDOM = document.querySelector('.app-header-main-search-filter__current > p');
-    textDOM.innerHTML = dom.innerHTML;
-
-    document.querySelector('#id-cate').value = id;
-}
-
 // Set action for add to cart
 function addToCart(id) {
     var hasCart = carts.find(function(value) {
@@ -199,6 +146,7 @@ function addToCart(id) {
             duration: 2000
         });
     }
+    localStorage.setItem('carts', JSON.stringify(carts));
     loadCart();
 }
 
@@ -214,6 +162,7 @@ function removeFromCart(id) {
         type: 'error',
         duration: 2000
     });
+    localStorage.setItem('carts', JSON.stringify(carts));
     loadCart();
 }
 
@@ -244,7 +193,7 @@ function loadCart() {
                 <span onclick="removeFromCart(${value.id})">Xóa</span>
             </div>
             <div class="app-header-main-cart-list-item__price">
-                <h4>${value.currentPrice}</h4>
+                <h4>${new Intl.NumberFormat().format(value.currentPrice)}</h4>
                 <p>${value.quantity}</p>
             </div>
             `;
@@ -260,14 +209,6 @@ function loadCart() {
 
 // Render data books
 function renderBooks() {
-    books.map(function (value) {
-        value.currentPrice = new Intl.NumberFormat().format(value.currentPrice);
-        value.oldPrice = new Intl.NumberFormat().format(value.oldPrice);
-        value.sale = value.sale + '%';
-
-        return value;
-    });
-
     var listBooksDOM = document.querySelector('.app-content-books__list');
     listBooksDOM.innerHTML = '';
     var row = document.createElement('div');
@@ -289,9 +230,9 @@ function renderBooks() {
                     <div class="app-content-books-item-info__name">${value.name}</div>
                     <div class="app-content-books-item-info__author">${value.author}</div>
                     <div class="app-content-books-item-info__price">
-                        <div class="app-content-books-item-info__price-current">${value.currentPrice}</div>
-                        <div class="app-content-books-item-info__price-old">${value.oldPrice}</div>
-                        <div class="app-content-books-item-info__price-sale">-${value.sale}</div>
+                        <div class="app-content-books-item-info__price-current">${new Intl.NumberFormat().format(value.currentPrice)}</div>
+                        <div class="app-content-books-item-info__price-old">${new Intl.NumberFormat().format(value.oldPrice)}</div>
+                        <div class="app-content-books-item-info__price-sale">-${value.sale}%</div>
                     </div>
                 </div>
             </a>
@@ -299,10 +240,10 @@ function renderBooks() {
                 <div class="app-content-books-pop-up__name">${value.name}</div>
                 <div class="app-content-books-pop-up__author">${value.author}</div>
                 <div class="app-content-books-pop-up__price">
-                    <div class="app-content-books-pop-up__price-current">${value.currentPrice}</div>
-                    <div class="app-content-books-pop-up__price-old">${value.oldPrice}</div>
+                    <div class="app-content-books-pop-up__price-current">${new Intl.NumberFormat().format(value.currentPrice)}</div>
+                    <div class="app-content-books-pop-up__price-old">${new Intl.NumberFormat().format(value.oldPrice)}</div>
                 </div>
-                <div class="app-content-books-pop-up__sale">Giảm giá: ${value.sale}</div>
+                <div class="app-content-books-pop-up__sale">Giảm giá: ${value.sale}%</div>
                 <div class="app-content-books-pop-up__btn">
                     <span onclick="addToCart(${value.id})">Thêm vào giỏ hàng</span>
                 </div>

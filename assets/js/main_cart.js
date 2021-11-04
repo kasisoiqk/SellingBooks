@@ -1,54 +1,8 @@
 // Declare variable
-var carts = [
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 1,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 1
-    },
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 2,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 2
-    },
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 3,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 1
-    },
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 4,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 2
-    },
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 5,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 1
-    },
-    {
-        author: "Emma Thompson",
-        currentPrice: 63500,
-        id: 6,
-        image: "./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png",
-        name: "Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh (Tái Bản 2021)",
-        quantity: 2
-    }
-];
+var carts = [];
+if(localStorage.getItem('carts') != null) {
+    carts = JSON.parse(localStorage.getItem('carts'));
+}
 
 // JSON
 
@@ -107,7 +61,7 @@ function upQuantity(id) {
     else {
         cart.quantity++;
     }
-
+    localStorage.setItem('carts', JSON.stringify(carts));
     loadListCart();
 }
 
@@ -122,7 +76,7 @@ function downQuantity(id) {
     else {
         cart.quantity--;
     }
-
+    localStorage.setItem('carts', JSON.stringify(carts));
     loadListCart();
 }
 
@@ -183,6 +137,7 @@ function removeItem(id) {
         type: 'error',
         duration: 2000 
     });
+    localStorage.setItem('carts', JSON.stringify(carts));
     loadListCart();
 }
 
