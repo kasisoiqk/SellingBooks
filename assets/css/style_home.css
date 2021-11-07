@@ -486,7 +486,7 @@
 }
 
 .app-header-main-cart__view-cart > a:hover {
-    transform: scale(1.02);
+    transform: scale(.98);
     opacity: 0.9;
 }
 
