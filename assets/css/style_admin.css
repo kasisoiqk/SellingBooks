@@ -184,7 +184,7 @@
 
 /* Container Content */
 .app-container__content {
-    min-height: 200vh;
+    min-height: 80vh;
 }
 
 .app-container-content__text {
@@ -304,6 +304,10 @@
     border-radius: 4px;
 }
 
+.app-container-content__list > table td {
+    background-color: var(--white-color);
+}
+
 .app-container-content__item-img {
     --size: 72px;
     width: var(--size);
@@ -359,6 +363,41 @@
     font-size: 1.2rem;
     border-left: 1px dashed var(--white-color);
     border-right: 1px dashed var(--white-color);
+}
+
+.app-container-content__item-user {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 0 4px;
+    font-weight: 600;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    position: sticky;
+    position: -webkit-sticky;
+    left: 0;
+}
+
+table th:last-child,
+table td:last-child {
+    position: sticky;
+    position: -webkit-sticky;
+    right: 0;
+}
+
+.app-container-content__item-user img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.app-container-content__item-user-info {
+    color: var(--secondary-color);
+    margin: 4px 0;
+    white-space: nowrap;
 }
 
 #cbo-show-modal:checked ~ .modal {

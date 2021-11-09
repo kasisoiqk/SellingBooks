@@ -153,7 +153,7 @@ function formatBookID(id) {
 // Show modal input
 function showEdit(id) {
     var book = books.find(function(value) {
-        return value.id = id;
+        return value.id == id;
     });
 
     var modalDOM = document.querySelector('.modal__input');
@@ -221,7 +221,7 @@ function loadListBooks() {
             <div class="app-container-content__item-sale">-${value.sale}%</div>
         </td>
         <td style="white-space: nowrap;">${value.quantity} quyển</td>
-        <td>
+        <td style="text-align: center;">
             <label for="cbo-show-modal" class="app__btn" onclick="showEdit(${value.id})">Chi tiết</label>
         </td>
         `;

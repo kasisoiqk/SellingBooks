@@ -47,7 +47,7 @@
                     <ul class="app-content__linker-wrapper">
                         <li><a href="#"><span class="material-icons-outlined">home</span>Trang chủ</a></li>
                         <li><a href="#">/ Quản trị</a></li>
-                        <li><a href="#">/ Quản lý thông tin sách</a></li>
+                        <li><a href="#">/ Quản lý người dùng</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <ul class="app-container-menu__control">
-                                <li class="app-container-menu-control__item active-color">
+                                <li class="app-container-menu-control__item">
                                     <a href="#">
                                         <span class="material-icons-outlined">book</span>
                                         Quản lý thông tin sách
@@ -83,10 +83,10 @@
                                         Quản lý đơn đặt hàng
                                     </a>
                                 </li>
-                                <li class="app-container-menu-control__item">
+                                <li class="app-container-menu-control__item active-color">
                                     <a href="#">
                                         <span class="material-icons-outlined">manage_accounts</span>
-                                        Quản lý tài khoản
+                                        Quản lý người dùng
                                     </a>
                                 </li>
                                 <li class="app-container-menu-control__item">
@@ -106,120 +106,99 @@
                     </div>
                     <div class="col l-9 m-12 c-12">
                         <div class="app-container__content">
-                            <div class="app-container-content__text">Danh sách thông tin sách</div>
+                            <div class="app-container-content__text">Danh sách thông tin người dùng</div>
                             <div class="app-container-content__search">
                                 <!-- Re-use header search -->
                                 <div class="app-header__search" style="background-color: transparent;">
                                     <span class="material-icons-outlined">search</span>
-                                    <input type="hidden" name="id-cate" id="id-cate" value="">
-                                    <input type="text" id="txt-search" name="txt-search" placeholder="Nhập mã sách hoặc tên sách muốn tìm...">
-                                </div>
-                                <!-- Re-use header filter home page -->
-                                <div class="app-header-main-search__filter">
-                                    <div class="app-header-main-search-filter__current">
-                                        <p>Tất cả</p>
-                                        <span class="material-icons-outlined">unfold_more</span>
-                                    </div>
-                                    <ul class="app-header-main-search-filter__choose">
-                                        <li class="app-header-main-search-filter-choose__item active-color">Tất cả</li>
-                                        <li class="app-header-main-search-filter-choose__item">Truyện tranh</li>
-                                        <li class="app-header-main-search-filter-choose__item">Kinh tế</li>
-                                        <li class="app-header-main-search-filter-choose__item">Xã hội</li>
-                                        <li class="app-header-main-search-filter-choose__item">Văn hóa - Chính trị</li>
-                                        <li class="app-header-main-search-filter-choose__item">Ngoại ngữ</li>
-                                        <li class="app-header-main-search-filter-choose__item">Công nghệ</li>
-                                        <li class="app-header-main-search-filter-choose__item">Lập trình</li>
-                                    </ul>
+                                    <input type="text" id="txt-search" name="txt-search" placeholder="Nhập mã người dùng hoặc tên người dùng muốn tìm...">
                                 </div>
                             </div>
-                            <div class="app-container-content__search-text active-color">Nội dung tìm kiếm: AAA - Danh mục: Tất cả</div>
+                            <div class="app-container-content__search-text active-color">Nội dung tìm kiếm: AAA</div>
                             <div class="app-container-content__btn-add">
-                                <label for="cbo-show-modal" class="app__btn" onclick="showCreate()" style="display: inline-block;">+ Thêm mới sách</label>
+                                <label for="cbo-show-modal" class="app__btn" onclick="showCreate()" style="display: inline-block;">+ Thêm mới người dùng</label>
                             </div>
                             <div class="app-container-content__list">
                                 <table>
                                     <thead>
-                                        <th>Mã sách</th>
-                                        <th>Ảnh</th>
+                                        <th>Mã người dùng</th>
+                                        <th>Họ tên</th>
                                         <th>Thông tin</th>
-                                        <th>Giá bán</th>
-                                        <th>Số lượng</th>
+                                        <th>Mã tài khoản</th>
+                                        <th>Tên tài khoản</th>
+                                        <th>Mật khẩu</th>
+                                        <th>Phân quyền</th>
                                         <th>Thao tác</th>
                                     </thead>
                                     <!-- Render data -->
                                     <tbody></tbody>
                                 </table>
+
                                 <input type="checkbox" id="cbo-show-modal" hidden>
                                 <label for="cbo-show-modal" class="modal">
                                     <!-- Prefix class: create: modal__input-create; edit: modal__input-edit -->
-                                    <label for="none" class="modal__input modal__input-edit">
+                                    <label for="none" class="modal__input modal__input-edit" style="max-width: 600px;">
                                         <form action="" method="POST">
                                             <div class="modal-input__text hide-on-create">
-                                                <h2>Chi tiết thông tin sách!</h2>
-                                                <p>Bạn có thể cập nhật hoặc xóa sách</p>
+                                                <h2>Chi tiết thông tin người dùng!</h2>
+                                                <p>Bạn có thể cập nhật hoặc xóa người dùng</p>
                                             </div>
                                             <div class="modal-input__text hide-on-edit">
-                                                <h2>Thêm sách mới!</h2>
-                                                <p>Bạn có thể thêm sách</p>
+                                                <h2>Thêm người dùng mới!</h2>
+                                                <p>Bạn có thể thêm người dùng</p>
                                             </div>
                                             <div class="row">
-                                                <div class="col l-8">
+                                                <div class="col l-12">
                                                     <div class="modal-input__info">
                                                         <div class="modal-input__group">
-                                                            <i class="fas fa-book"></i>
-                                                            <input type="text" name="book-name" id="book-name" placeholder="Nhập tên sách..." required>
-                                                        </div>
-                                                        <div class="modal-input__group">
-                                                            <i class="fas fa-user-shield"></i>
-                                                            <input type="text" name="book-author" id="book-author" placeholder="Nhập tác giả..." required>
-                                                        </div>
-                                                        <div class="modal-input__group">
-                                                            <i class="fas fa-bookmark"></i>
-                                                            <select name="book-cate" id="book-cate">
-                                                                <option value="1">Sách thiếu nhi</option>
-                                                                <option value="2">Sách thiếu nhi</option>
-                                                                <option value="3">Sách thiếu nhi</option>
-                                                                <option value="4">Sách thiếu nhi</option>
-                                                                <option value="5">Sách thiếu nhi</option>
-                                                            </select>
+                                                            <i class="fas fa-user-edit"></i>
+                                                            <input type="text" name="name" id="name" placeholder="Nhập họ tên..." required>
                                                         </div>
                                                         <div class="modal-input__group" style="gap: 0 4px; background-color: transparent;">
                                                             <div class="modal-input__group" style="margin: 0;">
-                                                                <i class="fas fa-money-bill-alt"></i>
-                                                                <input type="text" name="book-current-price" id="book-current-price" placeholder="Nhập giá bán..." required>
+                                                                <i class="fas fa-birthday-cake"></i>
+                                                                <input type="date" name="birth" id="birth" required>
                                                             </div>
                                                             <div class="modal-input__group" style="margin: 0;">
-                                                                <i class="far fa-money-bill-alt"></i>
-                                                                <input type="text" name="book-old-price" id="book-old-price" placeholder="Nhập giá chưa giảm..." required>
+                                                                <i class="fas fa-restroom"></i>
+                                                                <input type="radio" style="width: 16px; height: 16px; " name="gender" id="nu">
+                                                                <label style="flex: 2;" for="nu">Nữ</label>
+                                                                <input type="radio" style="width: 16px; height: 16px; " name="gender" id="nam">
+                                                                <label style="flex: 2;" for="nam">Nam</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-input__group" style="gap: 0 4px; background-color: transparent;">
+                                                            <div class="modal-input__group" style="margin: 0;">
+                                                                <i class="fas fa-phone-square-alt"></i>
+                                                                <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại..." required>
+                                                            </div>
+                                                            <div class="modal-input__group" style="margin: 0;">
+                                                                <i class="fas fa-envelope"></i>
+                                                                <input type="text" name="email" id="email" placeholder="Nhập email..." required>
                                                             </div>
                                                         </div>
                                                         <div class="modal-input__group">
-                                                            <i class="fas fa-ticket-alt"></i>
-                                                            <input type="text" name="book-sale" id="book-sale" placeholder="Nhập phần trăm giảm giá..." required>
+                                                            <i class="fas fa-user"></i>
+                                                            <input type="text" name="username" id="username" placeholder="Nhập tên tài khoản..." required>
                                                         </div>
                                                         <div class="modal-input__group">
-                                                            <i class="fas fa-sort-numeric-up-alt"></i>
-                                                            <input type="text" name="book-quantity" id="book-quantity" placeholder="Nhập số lượng..." required>
+                                                            <i class="fas fa-key"></i>
+                                                            <input type="text" name="password" id="password" placeholder="Nhập mật khẩu..." required>
                                                         </div>
                                                         <div class="modal-input__group">
-                                                            <i class="fas fa-file-alt"></i>
-                                                            <input type="text" name="book-description" id="book-description" placeholder="Nhập mô tả..." required>
+                                                            <i class="fas fa-users-cog"></i>
+                                                            <select name="permisstion" id="permission">
+                                                                <option value="1">USER</option>
+                                                                <option value="2">ADMIN</option>
+                                                            </select>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col l-4">
-                                                    <div class="modal-input__img">
-                                                        <input type="file" name="book-img" id="book-img" hidden>
-                                                        <img src="./assets/images/tho-peter-cuoc-giai-cuu-ngay-giang-sinh_32047_1.png" alt="">
-                                                        <span class="app__btn">Chọn ảnh</span>
-                                                        <p>(Kích thước ảnh tối đa 1MB)</p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-input__btn">
-                                                <span class="hide-on-edit" style="flex: 1;" onclick="createBook()">Thêm mới</span>
+                                                <span class="hide-on-edit" style="flex: 1;">Thêm mới</span>
                                                 <span class="hide-on-create" style="flex: 2;">Cập nhật</span>
-                                                <span class="hide-on-create" style="flex: 1;" onclick="">Xóa</span>
+                                                <span class="hide-on-create" style="flex: 1;">Xóa</span>
                                             </div>
                                         </form>
                                     </label>
@@ -231,18 +210,16 @@
                                     <div class="col l-12 m-12 c-12">
                                         <!-- Pagination -->
                                         <div class="app-content__pagination">
-                                            <div class="app-content__pagination">
-                                                <a href="#" class="app-content-pagination__first-page">Về trang đầu</a>
-                                                <a href="#" class="app-content-pagination__before-page"><</a>
-                                                <a href="#" class="app-content-pagination__item-page current-page">1</a>
-                                                <a href="#" class="app-content-pagination__item-page">2</a>
-                                                <a href="#" class="app-content-pagination__item-page">3</a>
-                                                <a href="#" class="app-content-pagination__item-page">4</a>
-                                                <a href="#" class="app-content-pagination__item-page">...</a>
-                                                <a href="#" class="app-content-pagination__item-page">9</a>
-                                                <a href="#" class="app-content-pagination__affter-page">></a>
-                                                <a href="#" class="app-content-pagination__last-page">Về trang cuối</a>
-                                            </div>
+                                            <a href="#" class="app-content-pagination__first-page">Về trang đầu</a>
+                                            <a href="#" class="app-content-pagination__before-page"><</a>
+                                            <a href="#" class="app-content-pagination__item-page current-page">1</a>
+                                            <a href="#" class="app-content-pagination__item-page">2</a>
+                                            <a href="#" class="app-content-pagination__item-page">3</a>
+                                            <a href="#" class="app-content-pagination__item-page">4</a>
+                                            <a href="#" class="app-content-pagination__item-page">...</a>
+                                            <a href="#" class="app-content-pagination__item-page">9</a>
+                                            <a href="#" class="app-content-pagination__affter-page">></a>
+                                            <a href="#" class="app-content-pagination__last-page">Về trang cuối</a>
                                         </div>
                                     </div>
                                 </div>
@@ -258,8 +235,7 @@
         </footer>
     </div>
 
-    <script src="./assets/js/main_base.js"></script>
-    <script src="./assets/js/main_admin.js"></script>
+    <script src="./assets/js/main_admin_account.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng | Book buy</title>
+    <title>Tìm kiếm | Book buy</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
         integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
@@ -17,10 +17,8 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/style_home.css">
-    <link rel="stylesheet" href="./assets/css/style_cart.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
     <link rel="stylesheet" href="./assets/css/responsive_home.css">
-    <link rel="stylesheet" href="./assets/css/responsive_cart.css">
 </head>
 
 <body>
@@ -188,7 +186,7 @@
                             <!-- No cart: header-main--no-cart -->
                             <div id="cart-list" class="app-header-main-cart__cart">
                                 <span class="material-icons-outlined">shopping_cart</span>
-                                <a href="#" class="number-books-cart">2</a>
+                                <a href="cart.html" class="number-books-cart">2</a>
                                 <div class="app-header-main-cart__list">
                                     <h2>Sách trong giỏ hàng</h2>
                                     <h2 class="header-main-no-cart__text">Giỏ hàng trống</h2>
@@ -197,7 +195,7 @@
                                     </div>
                                     <ul class="app-header-main-cart__list-list"></ul>
                                     <div class="app-header-main-cart__view-cart">
-                                        <a href="#">Đi tới giỏ hàng</a>
+                                        <a href="cart.html">Đi tới giỏ hàng</a>
                                     </div>
                                 </div>
                             </div>
@@ -208,37 +206,54 @@
         </header>
 
         <div class="app__content">
-            <div class="grid wide">
-                <div class="app-content__linker">
-                    <div class="grid wide">
-                        <ul class="app-content__linker-wrapper">
-                            <li><a href="home.html"><span class="material-icons-outlined">home</span>Trang chủ</a></li>
-                            <li><a href="#">/ Giỏ hàng</a></li>
-                        </ul>
-                    </div>
+            <div class="app-content__linker">
+                <div class="grid wide">
+                    <ul class="app-content__linker-wrapper">
+                        <li><a href="#"><span class="material-icons-outlined">home</span>Trang chủ</a></li>
+                        <li><a href="#">/ Tìm kiếm</a></li>
+                    </ul>
                 </div>
-                <div class="app-content__cart-list">
+            </div>
+            <div class="app-content__search-text">
+                <div class="grid wide">
+                    Bạn đang tìm kiếm theo danh mục: <a href="#">Tất cả</a>
+                    Với nội dung: <a href="#">Sách toán</a>
+                </div>
+            </div>
+            <div class="app-content__books">
+                <div class="grid wide">
                     <div class="row">
-                        <div class="col l-9 m-9 c-12">
-                            <div class="app-content-cart-list__text">Giỏ Hàng</div>
-                            <!-- Cart empty class: cart-empty -->
-                            <div class="app-content-cart-list__list"></div>
+                        <div class="col l-2 m-4 c-12">
+                            <div class="app-content-books__title"><span
+                                    class="material-icons-outlined">view_list</span>Danh mục sách</div>
+                            <ul class="app-content-books__cate">
+                                <li class="app-content-books-cate__item"><a href="#">Truyện tranh</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Artbook & sách tranh</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Văn học Việt Nam</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Văn học nước ngoài</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Kinh tế</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Sách - Truyện thiếu nhi</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Sách Teen</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Sách cho cha mẹ</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Khoa học công nghệ</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Thể dục thể thao</a></li>
+                                <li class="app-content-books-cate__item"><a href="#">Từ điển</a></li>
+                            </ul>
                         </div>
-                        <div class="col l-3 m-3 c-12">
-                            <div class="app-content-cart-list__checkout">
-                                <div class="app-content-cart-list-checkout__body">
-                                    <div class="app-content-cart-list-checkout-body__quantity">2 sản phẩm</div>
-                                    <div class="app-content-cart-list-checkout-body__total-price">636,000đ</div>
-                                    <div class="app-content-cart-list-checkout-body__extra">( Chưa có cước vận chuyển )
-                                    </div>
-                                </div>
-                                <div class="app-content-cart-list-checkout__btn">Tiến hành đặt hàng</div>
-                            </div>
+                        <div class="col l-10 m-8 c-12">
+                            <div class="app-content-books__text">Kết quả tìm kiếm</div>
+
+                            <!-- Render list book here -->
+                            <div class="app-content-books__list"></div>
+
+                            <!-- Pagination -->
+                            <div class="app-content__pagination"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <footer>
             <div class="bg-bottom-ecaward hide-responsive">
                 <ul>
@@ -319,24 +334,11 @@
         </footer>
     </div>
 
-    <div class="modal" onclick="closeDialog()">
-        <div class="modal__dialog">
-            <div class="modal-dialog__title">Xóa</div>
-            <div class="modal-dialog__content">
-                Bạn có muốn xóa sách Thỏ Peter - Cuộc Giải Cứu Ngày Giáng Sinh Thỏ Peter trong giỏ hàng không?
-            </div>
-            <div class="modal-dialog__btn">
-                <span class="modal-dialog__btn-yes">Có</span>
-                <span class="modal-dialog__btn-no">Không</span>
-            </div>
-        </div>
-    </div>
-
     <div class="toast"></div>
 
     <script src="./assets/js/toast.js"></script>
     <script src="./assets/js/main_base.js"></script>
-    <script src="./assets/js/main_cart.js"></script>
+    <script src="./assets/js/main_home.js"></script>
 </body>
 
 </html>

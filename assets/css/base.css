@@ -211,7 +211,7 @@ html {
     text-align: center;
 }
 
-.modal-input__group > input, select {
+.modal-input__group > input, select, textarea {
     background-color: transparent;
     flex: 1;
     height: 100%;
@@ -221,6 +221,11 @@ html {
     color: currentColor;
 }
 
+.modal-input__group > textarea {
+    padding: 8px 0;
+}
+
+.modal-input__group > textarea::placeholder,
 .modal-input__group > input::placeholder {
     color: currentColor;
 }
@@ -294,6 +299,7 @@ html {
     white-space: nowrap;
     color: var(--white-color);
     border-radius: 4px;
+    text-decoration: none;
     cursor: pointer;
 }
 

@@ -415,11 +415,6 @@
     border-bottom: 1px dashed var(--border-color);
 }
 
-.app-header-main-cart-list__item +
-.app-header-main-cart-list__item {
-    padding: 0 4px;
-}
-
 .app-header-main-cart-list-item__img {
     height: 42px;
     width: 42px;
@@ -435,6 +430,7 @@
     flex: 1;
 }
 
+.app-header-main-cart-list-item__info > p,
 .app-header-main-cart-list-item__info > div {
     color: var(--text-color);
     line-height: 2rem;
@@ -674,6 +670,20 @@
     margin: 24px 0;
 }
 
+.app-content__search-text {
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.app-content__search-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.app-content__search-text a:hover {
+    text-decoration: underline;
+}
+
 /* Content Category */
 .app-content-books__title {
     display: flex;
@@ -772,6 +782,7 @@
     padding: 8px 12px;
 }
 
+.app-content-books-item-info__author,
 .app-content-books-item-info__name {
     line-height: 1.6rem;
     overflow: hidden;
